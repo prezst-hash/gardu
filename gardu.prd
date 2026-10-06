@@ -1,0 +1,786 @@
+﻿terkait aplikasi yang bagus untuk showcase AI coding yang simple namun nampak keren, Perlu membuat Landing page lalu ada aplikasinya. Untuk pengguna lingkungan PLN ULP Bengkayang
+Bisa. Untuk showcase AI coding yang sederhana tetapi terlihat profesional, saya justru menyarankan kita membuatnya sebagai mini product, bukan sekadar dashboard.
+
+Untuk lingkungan PLN ULP Bengkayang, konsep yang menurut saya paling menarik adalah:
+
+âš¡ Bengkayang Power Intelligence
+AI-powered Transformer & Distribution Monitoring
+
+Konsepnya:
+
+LANDING PAGE
+     â”‚
+     â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ Bengkayang Power Intelligence    â”‚
+â”‚                                  â”‚
+â”‚ AI untuk membantu monitoring     â”‚
+â”‚ aset & keandalan jaringan        â”‚
+â”‚                                  â”‚
+â”‚ [ Explore Dashboard ]            â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+     â”‚
+     â–¼
+APPLICATION
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚              â”‚                   â”‚
+â”‚ Dashboard    â”‚    GIS MAP        â”‚
+â”‚              â”‚                   â”‚
+â”‚ KPI          â”‚  ðŸŸ¢ ðŸŸ¢ ðŸ”´ ðŸŸ¡     â”‚
+â”‚              â”‚                   â”‚
+â”‚ AI Insight   â”‚                   â”‚
+â”‚              â”‚                   â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+1. Landing page
+Jangan terlalu ramai.
+
+Hero section:
+
+Bengkayang Power Intelligence
+
+Transforming Distribution Data into Actionable Intelligence.
+
+Kemudian ada visual peta Bengkayang dengan titik-titik aset yang bergerak secara subtle.
+
+Tiga angka besar:
+
+XX
+Total Trafo
+
+XX%
+Healthy Assets
+
+XX
+Active Alerts
+
+Tombol:
+
+[ Enter Dashboard â†’ ]
+
+2. Dashboard utama
+Setelah klik, masuk ke aplikasi.
+
+Header
+âš¡ BENGKAYANG POWER INTELLIGENCE
+
+Overview   GIS Asset   AI Analysis   Reliability
+                                      ðŸ””  ðŸ‘¤
+KPI
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚  186       â”‚ â”‚  91.4%     â”‚ â”‚  12        â”‚ â”‚  1.82 h    â”‚
+â”‚ TRAFOS     â”‚ â”‚ HEALTHY    â”‚ â”‚ ALERTS     â”‚ â”‚ MTTR       â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+3. Fitur paling keren: GIS
+Ini yang menjadi "wow factor" aplikasi.
+
+Peta Bengkayang menampilkan:
+
+ðŸŸ¢ Trafo normal
+ðŸŸ¡ Trafo perlu perhatian
+ðŸŸ  Risiko tinggi
+ðŸ”´ Kritis
+
+Klik trafo:
+
+TRF-BKY-023
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+160 kVA
+Loading       87%
+Temperature   68Â°C
+Power Factor  0.82
+Age           12 yr
+
+AI CONDITION
+â–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–ˆâ–‘â–‘ 78/100
+
+STATUS
+â— WATCH
+
+AI Insight:
+"Loading meningkat 14% dalam
+3 bulan terakhir."
+
+[ View Analysis ]
+4. AI Analysis
+Ini yang membuatnya benar-benar terlihat sebagai AI Coding Showcase.
+
+Bukan hanya menampilkan angka.
+
+Misalnya:
+
+ðŸ¤– AI Transformer Assessment
+TRF-BKY-023
+
+Condition Score
+       78 / 100
+
+Risk Level
+       MEDIUM
+
+AI ANALYSIS
+
+Loading merupakan faktor utama
+yang mempengaruhi penurunan
+condition score.
+
+Probability of deterioration
+within 90 days:
+
+       23%
+
+Recommended Action:
+
+Schedule inspection within
+30 days.
+Nantinya bagian ini berasal dari ANFIS yang kita bangun, bukan sekadar teks statis.
+
+5. AI Priority Ranking
+Ini juga sangat bagus untuk PLN ULP.
+
+Misalnya:
+
+Rank	Trafo	Condition	Risk	Priority
+1	TRF-023	42	ðŸ”´ High	P1
+2	TRF-081	48	ðŸ”´ High	P1
+3	TRF-044	57	ðŸŸ  Medium	P2
+4	TRF-109	63	ðŸŸ¡ Medium	P2
+5	TRF-017	84	ðŸŸ¢ Low	P3
+Sehingga aplikasi menjawab pertanyaan:
+
+"Trafo mana yang harus diperiksa terlebih dahulu?"
+
+Bukan sekadar:
+
+"Berapa jumlah trafo?"
+
+6. Reliability Analytics
+Tambahkan halaman:
+
+Reliability
+SAIDI
+4.21 h
+
+SAIFI
+3.12
+
+MTTR
+1.82 h
+Kemudian grafik:
+
+Gangguan / Bulan
+
+20 â”¤       â•­â”€â•®
+15 â”¤   â•­â”€â”€â”€â•¯ â•°â”€â”€â•®
+10 â”¤â”€â”€â”€â•¯        â•°â”€â”€
+ 5 â”¤
+ 0 â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+    Jan Feb Mar Apr May Jun
+7. Saya sarankan desain visualnya
+Untuk AI showcase, gunakan gaya:
+
+Dark + Electric Blue + Green
+
+Misalnya:
+
+Background
+#07111F
+
+Primary
+#00A8FF
+
+Healthy
+#22C55E
+
+Warning
+#F59E0B
+
+Critical
+#EF4444
+Tetapi jangan berlebihan dengan efek neon.
+
+Gunakan glassmorphism tipis, rounded cards, dan animasi kecil.
+
+8. Stack teknologi
+Kalau dibuat menggunakan AI coding seperti Antigravity, saya akan menggunakan:
+
+Frontend
+Next.js
+React
+Tailwind CSS
+shadcn/ui
+
+GIS
+MapLibre GL JS
+
+Charts
+Recharts
+
+Backend
+FastAPI
+
+Database
+PostgreSQL
+PostGIS
+
+AI
+Python
+ANFIS
+
+API
+REST API
+Strukturnya:
+
+                 LANDING PAGE
+                      â”‚
+                      â–¼
+                 NEXT.JS APP
+                      â”‚
+          â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+          â–¼           â–¼           â–¼
+        GIS        ANALYTICS      AI
+          â”‚           â”‚           â”‚
+          â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                      â–¼
+                  FAST API
+                      â”‚
+             â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”
+             â–¼                 â–¼
+        POSTGRESQL          ANFIS
+         + POSTGIS           MODEL
+9. Yang paling penting: kita jangan membuat semuanya sekaligus
+Untuk showcase pertama, saya sarankan MVP hanya mempunyai 4 halaman:
+
+01  Landing Page
+        â†“
+02  Executive Dashboard
+        â†“
+03  GIS Asset Map
+        â†“
+04  AI Transformer Analysis
+Setelah tampilannya sudah bagus, baru kita sambungkan:
+
+Excel â†’ Database â†’ ANFIS â†’ GIS
+
+Dengan demikian, Anda bisa mendapatkan prototype yang terlihat keren terlebih dahulu, lalu secara bertahap kita masukkan algoritma sebenarnya.
+
+Nama aplikasi yang saya rekomendasikan
+Bengkayang Power Intelligence (BPI)
+
+Tagline:
+
+AI-Powered Distribution Intelligence
+
+Atau kalau ingin lebih formal untuk lingkungan PLN:
+
+Bengkayang Distribution Intelligence System (BDIS)
+Data-Driven Asset & Reliability Intelligence
+
+Menurut saya BDIS lebih cocok jika nantinya ingin dipresentasikan kepada manajemen PLN karena terdengar seperti sebuah sistem internal, bukan sekadar demo AI.
+
+Kalau Anda setuju dengan konsep BDIS, tahap berikutnya saya bisa langsung susunkan blueprint UI lengkap + struktur folder + prompt Antigravity tahap 1 untuk membuat landing page dan aplikasi pertamanya.
+
+Anda mungkin juga tertarik dengan ini.
+
+
+
+Iklan
+proses semuanya
+
+Memproses selama 7s
+
+Sim. Kita jadikan ini proyek utuh BDIS â€” Bengkayang Distribution Intelligence System, dengan target akhirnya:
+
+Landing Page â†’ Dashboard â†’ GIS â†’ AI/ANFIS â†’ Database â†’ Reliability â†’ Maintenance Priority.
+
+Saya juga sudah cek kondisi Antigravity terbaru. Saat ini Antigravity 2.0 memang ditujukan untuk pekerjaan end-to-end dengan agent yang dapat mengerjakan code, terminal, browser, testing, dan artifacts; jadi cocok untuk proyek seperti ini. 
+
+Arsitektur final yang kita bangun
+                    BDIS
+                     â”‚
+          â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+          â”‚                     â”‚
+     LANDING PAGE          WEB APPLICATION
+                                â”‚
+       â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+       â”‚                        â”‚                        â”‚
+   EXECUTIVE                 GIS ASSET               AI ANALYSIS
+   DASHBOARD                   MAP                    ANFIS
+       â”‚                        â”‚                        â”‚
+       â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¼â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                                â”‚
+                         FASTAPI BACKEND
+                                â”‚
+                    â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+                    â”‚                       â”‚
+              PostgreSQL                 ANFIS
+               + PostGIS                  Model
+                    â”‚                       â”‚
+                    â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+                                â”‚
+                       TRANSFORMER DATA
+                                â”‚
+                       Excel / Database
+Tampilan yang kita tuju
+Landing page
+
+âš¡ Bengkayang Distribution Intelligence System
+AI-powered asset & reliability intelligence
+
+Dengan tombol:
+
+OPEN DASHBOARD â†’
+
+Dashboard
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ âš¡ BDIS                    ULP BENGKAYANG      â— DEMO DATA â”‚
+â”œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¤
+â”‚ Overview    â”‚                                              â”‚
+â”‚ GIS Asset   â”‚  186        91.4%       12        82.6       â”‚
+â”‚ AI Analysis â”‚  TRAFOS     HEALTHY     ALERTS    CI AVG     â”‚
+â”‚ Reliability â”‚                                              â”‚
+â”‚ Maintenance â”‚  â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â” â”‚
+â”‚ Data        â”‚  â”‚                      â”‚ â”‚ AI PRIORITY   â”‚ â”‚
+â”‚             â”‚  â”‚       GIS MAP        â”‚ â”‚               â”‚ â”‚
+â”‚             â”‚  â”‚                      â”‚ â”‚ TRF-004  28  â”‚ â”‚
+â”‚             â”‚  â”‚  ðŸŸ¢  ðŸŸ¢  ðŸŸ¡  ðŸ”´      â”‚ â”‚ TRF-003  51  â”‚ â”‚
+â”‚             â”‚  â”‚       ðŸŸ              â”‚ â”‚ TRF-002  74  â”‚ â”‚
+â”‚             â”‚  â”‚                      â”‚ â”‚               â”‚ â”‚
+â”‚             â”‚  â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜ â”‚
+â”‚             â”‚                                              â”‚
+â”‚             â”‚  Reliability Trend                           â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”´â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+AI-nya nanti benar-benar terhubung
+Kita tidak akan membuat AI palsu yang hanya mengubah warna.
+
+Alurnya:
+
+Excel Trafo
+     â†“
+Data Cleaning
+     â†“
+Feature Engineering
+     â†“
+ANFIS
+     â†“
+Condition Index
+     â†“
+Risk Classification
+     â†“
+Maintenance Priority
+     â†“
+GIS
+Contoh:
+
+TRF-BKY-004
+
+Loading             104%
+Temperature          81Â°C
+Power Factor         0.69
+Gangguan 12 bulan      7
+Trip                    5
+Umur                   17 tahun
+
+             â†“ ANFIS
+
+Condition Index       28/100
+Risk                  CRITICAL
+Priority              P1
+
+             â†“ GIS
+
+                 ðŸ”´
+Teknologi
+Saya rekomendasikan:
+
+Next.js + React â†’ aplikasi
+Tailwind + shadcn/ui â†’ UI
+MapLibre/Leaflet â†’ GIS
+Recharts â†’ grafik
+FastAPI â†’ backend
+PostgreSQL + PostGIS â†’ database GIS
+Python â†’ machine learning
+ANFIS â†’ model kondisi trafo
+Cara kita mengerjakannya di Antigravity
+Saya sarankan jangan memberikan satu prompt raksasa.
+
+Karena Antigravity mendukung agent, browser verification, artifacts, dan pekerjaan multi-step, lebih baik kita pecah menjadi beberapa task yang bisa diverifikasi satu per satu. 
+
+PROMPT 1 â€” Buat fondasi aplikasi
+Copy ke Antigravity:
+
+Create a new full-stack web application called:
+
+BDIS â€” Bengkayang Distribution Intelligence System
+
+Purpose:
+A modern AI + GIS dashboard prototype for PLN ULP Bengkayang to monitor transformer assets, reliability and transformer condition.
+
+Build the project using:
+
+Frontend:
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+
+GIS:
+- MapLibre GL JS or Leaflet
+
+Charts:
+- Recharts
+
+Backend:
+- FastAPI
+- Python
+
+Database preparation:
+- PostgreSQL
+- PostGIS
+
+Machine learning preparation:
+- Python ANFIS service interface
+
+For the first milestone, focus ONLY on the frontend prototype.
+
+Create:
+
+1. Landing page
+2. Executive dashboard
+3. GIS asset page
+4. AI transformer analysis page
+5. Reliability page
+6. Maintenance priority page
+7. Data page
+
+Use a professional dark industrial technology design.
+
+Brand:
+BDIS
+
+Subtitle:
+Bengkayang Distribution Intelligence System
+
+Tagline:
+AI-powered asset & reliability intelligence
+
+Target users:
+PLN ULP Bengkayang.
+
+Do NOT use real PLN confidential data.
+Use clearly labeled DEMO DATA.
+
+Center the GIS around Bengkayang, West Kalimantan.
+
+Before finishing:
+- Run the application.
+- Open it in the browser.
+- Test every route.
+- Check responsive layout.
+- Fix console errors.
+- Produce screenshots/artifacts showing the working UI.
+PROMPT 2 â€” GIS
+Setelah prompt pertama selesai:
+
+Now implement the GIS Asset Intelligence module.
+
+Create a realistic interactive map centered around Bengkayang, West Kalimantan.
+
+Create demo transformer assets with:
+- asset ID
+- transformer name
+- feeder
+- capacity
+- latitude
+- longitude
+- loading
+- temperature
+- power factor
+- outage count
+- condition index
+- risk level
+
+Use these risk colors:
+
+GREEN = Normal
+YELLOW = Waspada
+ORANGE = Warning
+RED = Critical
+
+Requirements:
+
+1. Interactive map
+2. Transformer markers
+3. Marker clustering when appropriate
+4. Filter by risk level
+5. Filter by feeder
+6. Search transformer
+7. Click marker
+8. Show transformer detail panel
+9. Show condition index
+10. Show AI status
+
+When a transformer is selected, show:
+
+Transformer ID
+Capacity
+Loading
+Temperature
+Power Factor
+Age
+Outages
+Condition Index
+Risk Level
+Recommended Action
+
+Clearly label the AI result as DEMO until a real validated ANFIS model is connected.
+
+Test the GIS in the browser.
+PROMPT 3 â€” Database
+Kemudian:
+
+Implement the PostgreSQL + PostGIS database architecture.
+
+Create tables:
+
+transformers
+outages
+maintenance_history
+work_orders
+model_predictions
+
+The transformers table must include:
+
+id
+asset_code
+name
+substation
+feeder
+region
+capacity_kva
+commissioning_year
+latitude
+longitude
+geom
+loading_pct
+overload_duration_h
+temperature_c
+voltage_deviation_pct
+power_factor
+outages_12m
+trips_12m
+maintenance_score
+last_maintenance_days
+oil_test_score
+condition_index
+risk_level
+failure_history
+failure_12m
+updated_at
+
+Use:
+
+PostGIS geometry(Point, 4326)
+
+Create spatial indexes.
+
+Create database migrations/schema.
+
+Create seed data using DEMO DATA only.
+
+Do not hard-code production credentials.
+Use environment variables.
+
+Verify database connectivity.
+PROMPT 4 â€” Excel â†’ Database
+Setelah itu:
+
+Create an Excel/CSV import pipeline.
+
+The source dataset will follow this structure:
+
+ID_Trafo
+Nama_Trafo
+Gardu
+Penyulang
+Wilayah
+Latitude
+Longitude
+Kapasitas_kVA
+Tahun_Operasi
+Umur_Tahun
+Tegangan_Primer_kV
+Tegangan_Sekunder_V
+Arus_Aktual_A
+Beban_kVA
+Loading_pct
+Overload_Duration_h
+Temperature_C
+Voltage_Deviation_pct
+Power_Factor
+Gangguan_12Bln
+Trip_12Bln
+Maintenance_Score
+Last_Maintenance_Days
+Oil_Test_Score
+Condition_Index
+Risk_Level
+Failure_History
+Failure_12Bln
+Catatan
+
+Build:
+
+1. File validation
+2. Missing value detection
+3. Data type validation
+4. Coordinate validation
+5. Duplicate transformer detection
+6. Unit validation
+7. Import preview
+8. Import to PostgreSQL/PostGIS
+
+Do not automatically modify suspicious engineering data.
+Flag it for review instead.
+PROMPT 5 â€” ANFIS
+Ini baru kita jalankan setelah Excel yang tadi Anda isi sudah tersedia.
+
+Implement the machine learning pipeline for transformer condition assessment.
+
+Use the transformer dataset as the source.
+
+Candidate features:
+
+Loading_pct
+Overload_Duration_h
+Temperature_C
+Voltage_Deviation_pct
+Power_Factor
+Gangguan_12Bln
+Trip_12Bln
+Maintenance_Score
+Last_Maintenance_Days
+Oil_Test_Score
+Umur_Tahun
+
+Target:
+
+Condition_Index
+
+Build:
+
+1. Data cleaning
+2. Missing value analysis
+3. Outlier analysis
+4. Feature scaling
+5. Train/test split
+6. ANFIS model
+7. Hyperparameter tuning
+8. Training
+9. Validation
+10. Test evaluation
+11. Model persistence
+12. Model versioning
+
+Compare ANFIS against at least:
+- Random Forest
+- XGBoost or Gradient Boosting
+- MLP neural network
+
+Report:
+MAE
+RMSE
+R2
+
+Do NOT fabricate accuracy.
+
+If the dataset is too small, explicitly report that the model is not ready for operational deployment.
+
+Create an API endpoint:
+
+POST /api/predict/transformer
+
+Return:
+
+condition_index
+risk_level
+model_version
+prediction_timestamp
+
+Do not present the result as an engineering diagnosis.
+PROMPT 6 â€” Hubungkan AI ke GIS
+Ini bagian yang akan membuat showcase-nya menarik:
+
+Connect the validated transformer condition model to the GIS dashboard.
+
+For each transformer:
+
+1. Retrieve latest operational data.
+2. Run the ML prediction.
+3. Store prediction in model_predictions.
+4. Update dashboard condition index.
+5. Update risk level.
+6. Update GIS marker color.
+
+Create a transformer detail panel with:
+
+CONDITION INDEX
+RISK
+MODEL VERSION
+TOP CONTRIBUTING FACTORS
+RECOMMENDED ACTION
+
+Create a ranked maintenance priority list.
+
+Priority:
+P1 = Critical
+P2 = High
+P3 = Medium
+P4 = Low
+
+Allow users to click a transformer in the priority table and automatically zoom the GIS map to that transformer.
+Hasil akhirnya
+Kita akan mempunyai aplikasi seperti:
+
+Landing
+
+â†’ Dashboard
+
+â†’ GIS
+
+â†’ pilih trafo
+
+â†’ AI Assessment
+
+â†’ Condition Index
+
+â†’ Risk
+
+â†’ Maintenance Priority
+
+Jadi saat dipresentasikan kepada manajemen, alurnya sangat mudah:
+
+"Di mana aset yang bermasalah?"
+
+GIS menjawab.
+
+"Seberapa sehat aset tersebut?"
+
+ANFIS menjawab.
+
+"Mengapa nilainya turun?"
+
+Feature analysis menjawab.
+
+"Mana yang harus ditangani dulu?"
+
+Priority ranking menjawab.
+
+"Apa dampaknya terhadap reliability?"
+
+Reliability dashboard menjawab.
+
+Catatan penting untuk PLN
+Untuk tahap showcase kita boleh menggunakan data demo. Jangan memasukkan data operasional atau data internal PLN ke layanan AI eksternal tanpa memastikan kebijakan keamanan/data PLN mengizinkannya. Antigravity saat ini juga memiliki jalur enterprise melalui Gemini Enterprise/Google Cloud dengan kontrol IAM dan VPC Service Controls, jadi deployment internal sebaiknya kita bahas terpisah ketika prototype sudah matang. 
+
+Langkah kita sekarang: buka Antigravity, buat workspace baru bernama BDIS-Bengkayang, lalu jalankan PROMPT 1. Setelah Antigravity menghasilkan aplikasinya, kirim screenshot atau hasil/artifact-nya ke saya. Saya akan bantu mengoreksi desain dan memberikan PROMPT 2 yang sudah disesuaikan dengan hasil aktualnya. 

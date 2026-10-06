@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BDIS — Bengkayang Distribution Intelligence System | PLN ULP Bengkayang</title>
+  <meta name="description" content="Sistem monitoring aset transformator dan keandalan jaringan distribusi berbasis AI & GIS untuk PLN ULP Bengkayang.">
+
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS for GIS Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand" data-navigate="landing" id="navBrandLogo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">
+          <div class="brand-title">BDIS</div>
+          <div class="brand-subtitle">PLN ULP BENGKAYANG</div>
+        </div>
+      </div>
+
+      <nav class="nav-links" id="mainNavigation">
+        <button class="nav-item active" data-view="landing" id="navBtnLanding">
+          <span>🏠</span> Beranda
+        </button>
+        <button class="nav-item" data-view="dashboard" id="navBtnDashboard">
+          <span>📊</span> Overview
+        </button>
+        <button class="nav-item" data-view="gis" id="navBtnGis">
+          <span>🗺️</span> GIS Asset
+        </button>
+        <button class="nav-item" data-view="ai" id="navBtnAi">
+          <span>🤖</span> AI Analysis
+        </button>
+        <button class="nav-item" data-view="reliability" id="navBtnReliability">
+          <span>📈</span> Reliability
+        </button>
+        <button class="nav-item" data-view="maintenance" id="navBtnMaintenance">
+          <span>⚡</span> Prioritas
+        </button>
+        <button class="nav-item" data-view="data" id="navBtnData">
+          <span>📁</span> Data
+        </button>
+      </nav>
+
+      <div class="nav-actions">
+        <span class="badge badge-demo">
+          <span class="pulse-dot dot-yellow"></span> DEMO DATA
+        </span>
+        <button class="btn btn-primary btn-sm" data-navigate="dashboard" id="btnEnterAppTop">
+          Enter Dashboard →
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       VIEW 1: LANDING PAGE (Strictly compliant with gardu.prd)
+       ========================================================================= -->
+  <section class="view-section active-view" id="view-landing">
+    <!-- Hero Section -->
+    <div class="landing-hero">
+      <div class="hero-glow-orb"></div>
+      <div class="container hero-content">
+        <div class="hero-tag-wrapper">
+          <span class="badge badge-glow">
+            <span class="pulse-dot"></span> BENGKAYANG DISTRIBUTION INTELLIGENCE SYSTEM
+          </span>
+          <span class="badge badge-pln">PLN ULP BENGKAYANG</span>
+        </div>
+
+        <h1 class="hero-title">
+          Bengkayang <span class="highlight">Power Intelligence</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Transforming Distribution Data into Actionable Intelligence. Membantu monitoring keandalan jaringan, prediksi kondisi kesehatan transformator dengan ANFIS, dan visualisasi spasial GIS real-time.
+        </p>
+
+        <div class="hero-cta-group">
+          <button class="btn btn-primary btn-lg" data-navigate="dashboard" id="btnHeroEnterDashboard">
+            Enter Dashboard →
+          </button>
+          <button class="btn btn-outline btn-lg" data-navigate="gis" id="btnHeroExploreGis">
+            🗺️ Eksplorasi Peta GIS
+          </button>
+        </div>
+
+        <!-- 3 Big Numbers (Required by gardu.prd: XX Total Trafo | XX% Healthy Assets | XX Active Alerts) -->
+        <div class="hero-stats-row">
+          <div class="hero-stat-card">
+            <div class="stat-value mono" id="heroTotalTrafos">186</div>
+            <div class="stat-label">Total Trafo Distribusi</div>
+          </div>
+          <div class="hero-stat-card stat-healthy">
+            <div class="stat-value healthy-color mono" id="heroHealthyAssets">91.4%</div>
+            <div class="stat-label">Healthy Assets</div>
+          </div>
+          <div class="hero-stat-card stat-alert">
+            <div class="stat-value alert-color mono" id="heroActiveAlerts">12</div>
+            <div class="stat-label">Active Alerts</div>
+          </div>
+        </div>
+
+        <!-- Bengkayang Visual Map Preview with Subtle Dots Animation -->
+        <div class="hero-visual-preview">
+          <div class="preview-header">
+            <div style="display: flex; align-items: center; gap: 8px; font-weight: 700; color: #fff;">
+              <span>📍 Peta Spasial Jaringan Distribusi Bengkayang</span>
+            </div>
+            <div class="preview-indicators">
+              <div class="indicator-item">
+                <span class="legend-circle legend-green"></span> Normal (142)
+              </div>
+              <div class="indicator-item">
+                <span class="legend-circle legend-yellow"></span> Waspada (28)
+              </div>
+              <div class="indicator-item">
+                <span class="legend-circle legend-orange"></span> Warning (10)
+              </div>
+              <div class="indicator-item">
+                <span class="legend-circle legend-red"></span> Critical (6)
+              </div>
+            </div>
+          </div>
+
+          <div class="preview-map-box">
+            <div id="landingMiniMap"></div>
+            <!-- Overlay Preview Card -->
+            <div class="landing-overlay-card">
+              <div class="overlay-title">
+                <span class="pulse-dot dot-red"></span> Live Asset Monitoring
+              </div>
+              <div class="overlay-body">
+                Sistem mendeteksi <strong>TRF-BKY-004</strong> (Pasar Bengkayang) mengalami overloading 104% dengan estimasi skor kondisi 28/100 (Kritis).
+              </div>
+              <button class="btn btn-outline btn-sm" data-navigate="gis" style="width: 100%; margin-top: 10px; font-size: 0.75rem;">
+                Inspeksi di Peta →
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Features Section -->
+    <div class="landing-features">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge badge-glow" style="margin-bottom: 12px;">Solusi Cerdas Distribusi</span>
+          <h2 class="section-title">Fitur Unggulan BDIS</h2>
+          <p class="section-desc">
+            Dirancang khusus untuk kebutuhan operasional PLN ULP Bengkayang guna meminimalisir gangguan padam dan memperpanjang umur aset.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3 class="feature-title">GIS Asset Intelligence</h3>
+            <p class="feature-desc">
+              Peta spasial interaktif sebaran gardu distribusi di seluruh penyulang Bengkayang (Kota, Teriak, Samalantan, Sanggau Ledo, Jagoi Babang) dengan indikator warna risiko.
+            </p>
+            <a href="javascript:void(0)" data-navigate="gis" class="feature-link">Buka Modul GIS →</a>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card">
+            <div class="feature-icon">🤖</div>
+            <h3 class="feature-title">ANFIS AI Condition Scoring</h3>
+            <p class="feature-desc">
+              Algoritma Adaptive Neuro-Fuzzy Inference System mengkalkulasi skor kesehatan transformator (0-100) berdasarkan pembebanan, temperatur, uji minyak, dan histori trip.
+            </p>
+            <a href="javascript:void(0)" data-navigate="ai" class="feature-link">Lihat AI Analysis →</a>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3 class="feature-title">Maintenance Priority Ranking</h3>
+            <p class="feature-desc">
+              Menjawab pertanyaan operasional: "Trafo mana yang harus diperiksa terlebih dahulu?". Klasifikasi prioritas P1 (Kritis) hingga P4 untuk tim teknisi lapangan.
+            </p>
+            <a href="javascript:void(0)" data-navigate="maintenance" class="feature-link">Daftar Prioritas P1-P4 →</a>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <h3 class="feature-title">Reliability Analytics</h3>
+            <p class="feature-desc">
+              Monitoring indeks keandalan SAIDI, SAIFI, MTTR, dan analisis tren gangguan bulanan untuk mendukung pencapaian target kinerja operasional ULP.
+            </p>
+            <a href="javascript:void(0)" data-navigate="reliability" class="feature-link">Analisis Keandalan →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Architecture Showcase (from PRD) -->
+    <div class="architecture-section">
+      <div class="container">
+        <div class="section-head" style="margin-bottom: 24px;">
+          <span class="badge badge-pln" style="margin-bottom: 10px;">Arsitektur Sistem</span>
+          <h2 class="section-title" style="font-size: 1.8rem;">Pipeline Teknologi Modern</h2>
+          <p class="section-desc">
+            Integrasi frontend responsif, GIS spasial, backend komputasi ML, dan basis data PostGIS.
+          </p>
+        </div>
+
+        <div class="arch-flow-wrapper">
+          <div class="arch-steps">
+            <div class="arch-step-box">
+              <div class="step-label">Layer 1</div>
+              <div class="step-title">Landing & UI</div>
+              <div class="step-detail">Modern Dark Industrial Web</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-step-box">
+              <div class="step-label">Layer 2</div>
+              <div class="step-title">Spatial GIS</div>
+              <div class="step-detail">Leaflet Interactive Map</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-step-box">
+              <div class="step-label">Layer 3</div>
+              <div class="step-title">AI Engine</div>
+              <div class="step-detail">Python ANFIS Neuro-Fuzzy</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-step-box">
+              <div class="step-label">Layer 4</div>
+              <div class="step-title">Backend API</div>
+              <div class="step-detail">FastAPI REST Services</div>
+            </div>
+            <div class="arch-arrow">→</div>
+            <div class="arch-step-box">
+              <div class="step-label">Layer 5</div>
+              <div class="step-title">Spasial Database</div>
+              <div class="step-detail">PostgreSQL + PostGIS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VIEW 2: EXECUTIVE DASHBOARD (Overview)
+       ========================================================================= -->
+  <section class="view-section" id="view-dashboard">
+    <div class="container app-layout">
+      <!-- Sub-nav bar -->
+      <div class="app-subnav-bar">
+        <div class="subnav-breadcrumbs">
+          <span>⚡ BDIS</span>
+          <span>/</span>
+          <span class="current">Executive Dashboard</span>
+        </div>
+        <div class="subnav-meta">
+          <span>Wilayah: <strong>ULP Bengkayang</strong></span>
+          <span>Update: <strong>Realtime Sensor Sync</strong></span>
+        </div>
+      </div>
+
+      <!-- KPI Grid (gardu.prd: 186 TRAFOS | 91.4% HEALTHY | 12 ALERTS | 1.82 h MTTR) -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span class="kpi-title">TOTAL TRAFOS</span>
+            <span class="kpi-icon">⚡</span>
+          </div>
+          <div class="kpi-number mono">186</div>
+          <div class="kpi-trend trend-good">
+            <span>●</span> 5 Penyulang Terintegrasi
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span class="kpi-title">HEALTHY ASSETS</span>
+            <span class="kpi-icon">🛡️</span>
+          </div>
+          <div class="kpi-number mono" style="color: var(--risk-normal);">91.4%</div>
+          <div class="kpi-trend trend-good">
+            <span>↑ +1.2%</span> dari bulan sebelumnya
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span class="kpi-title">ACTIVE ALERTS</span>
+            <span class="kpi-icon">⚠️</span>
+          </div>
+          <div class="kpi-number mono" style="color: var(--risk-critical);">12</div>
+          <div class="kpi-trend trend-bad">
+            <span>6 Kritis (P1)</span> • 6 Waspada (P2)
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span class="kpi-title">MTTR RECOVERY</span>
+            <span class="kpi-icon">⏱️</span>
+          </div>
+          <div class="kpi-number mono">1.82 <span style="font-size: 1rem;">h</span></div>
+          <div class="kpi-trend trend-good">
+            <span>Target: < 2.0 jam</span> (Tercapai)
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span class="kpi-title">AVG CONDITION INDEX</span>
+            <span class="kpi-icon">🤖</span>
+          </div>
+          <div class="kpi-number mono" style="color: var(--primary);">82.6</div>
+          <div class="kpi-trend trend-good">
+            <span>Status: Prima</span> (Skala 0-100)
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Overview Content -->
+      <div class="overview-grid">
+        <!-- Reliability Trend Chart -->
+        <div class="panel-card">
+          <div class="panel-head">
+            <div class="panel-title">
+              📊 Tren Gangguan & Trip Trafo (Jan - Jun)
+            </div>
+            <div class="panel-actions">
+              <span class="badge badge-glow">Bulanan</span>
+            </div>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 16px;">
+            Grafik batang menunjukkan jumlah gangguan distribusi; garis merah menunjukkan total trip proteksi relai.
+          </div>
+          <div style="height: 280px; width: 100%;">
+            <canvas id="dashboardCanvasTrend" style="width: 100%; height: 100%;"></canvas>
+          </div>
+        </div>
+
+        <!-- Quick AI Priority List -->
+        <div class="panel-card">
+          <div class="panel-head">
+            <div class="panel-title">
+              🚨 Trafo Perlu Perhatian Segera
+            </div>
+            <button class="btn btn-outline btn-sm" data-navigate="maintenance">
+              Semua →
+            </button>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+            Berdasarkan hasil kalkulasi model AI ANFIS:
+          </div>
+          <div class="priority-table-wrapper">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>ID Trafo</th>
+                  <th>Lokasi</th>
+                  <th>Skor</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="overviewQuickPriority">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feeder Summary Table -->
+      <div class="panel-card">
+        <div class="panel-head">
+          <div class="panel-title">
+            ⚡ Profil Penyulang Utama PLN ULP Bengkayang
+          </div>
+          <button class="btn btn-outline btn-sm" data-navigate="gis">Lihat di Peta Spasial →</button>
+        </div>
+        <div class="priority-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID Penyulang</th>
+                <th>Nama Penyulang</th>
+                <th>Jumlah Trafo</th>
+                <th>Panjang Jaringan (kms)</th>
+                <th>Kapasitas Terpasang</th>
+                <th>Beban Puncak (%)</th>
+                <th>Status Operasional</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono">F-KOTA</td>
+                <td><strong>Penyulang Kota</strong></td>
+                <td>54 unit</td>
+                <td>42.6 kms</td>
+                <td>8,500 kVA</td>
+                <td class="mono">76.4%</td>
+                <td><span class="badge" style="background: rgba(34,197,94,0.2); color: var(--risk-normal);">Normal</span></td>
+              </tr>
+              <tr>
+                <td class="mono">F-TERIAK</td>
+                <td><strong>Penyulang Teriak</strong></td>
+                <td>41 unit</td>
+                <td>58.2 kms</td>
+                <td>6,200 kVA</td>
+                <td class="mono" style="color: var(--risk-warning);">84.1%</td>
+                <td><span class="badge" style="background: rgba(249,115,22,0.2); color: var(--risk-warning);">Warning</span></td>
+              </tr>
+              <tr>
+                <td class="mono">F-SAMALANTAN</td>
+                <td><strong>Penyulang Samalantan</strong></td>
+                <td>36 unit</td>
+                <td>49.8 kms</td>
+                <td>5,400 kVA</td>
+                <td class="mono">68.9%</td>
+                <td><span class="badge" style="background: rgba(34,197,94,0.2); color: var(--risk-normal);">Normal</span></td>
+              </tr>
+              <tr>
+                <td class="mono">F-SANGGAU_LEDO</td>
+                <td><strong>Penyulang Sanggau Ledo</strong></td>
+                <td>32 unit</td>
+                <td>64.3 kms</td>
+                <td>4,800 kVA</td>
+                <td class="mono">72.3%</td>
+                <td><span class="badge" style="background: rgba(234,179,8,0.2); color: var(--risk-waspada);">Waspada</span></td>
+              </tr>
+              <tr>
+                <td class="mono">F-JAGOI_BABANG</td>
+                <td><strong>Penyulang Jagoi Babang</strong></td>
+                <td>23 unit</td>
+                <td>78.5 kms</td>
+                <td>3,600 kVA</td>
+                <td class="mono">61.2%</td>
+                <td><span class="badge" style="background: rgba(34,197,94,0.2); color: var(--risk-normal);">Normal</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VIEW 3: GIS ASSET INTELLIGENCE (PROMPT 2 in gardu.prd)
+       ========================================================================= -->
+  <section class="view-section" id="view-gis">
+    <div class="container app-layout">
+      <!-- Sub-nav bar -->
+      <div class="app-subnav-bar">
+        <div class="subnav-breadcrumbs">
+          <span>⚡ BDIS</span>
+          <span>/</span>
+          <span class="current">GIS Asset Intelligence</span>
+        </div>
+        <div class="subnav-meta">
+          <span>Pusat Peta: <strong>Bengkayang (0.8242° N, 109.6636° E)</strong></span>
+          <span class="badge badge-glow">Interaktif</span>
+        </div>
+      </div>
+
+      <div class="gis-layout">
+        <!-- Sidebar Filters & Asset List -->
+        <aside class="gis-sidebar">
+          <div class="search-input-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" class="search-input" id="gisSearchInput" placeholder="Cari ID trafo atau nama gardu...">
+          </div>
+
+          <div>
+            <div class="filter-group-title">Filter Tingkat Risiko</div>
+            <div class="filter-pills">
+              <button class="filter-pill active" data-risk="ALL">Semua</button>
+              <button class="filter-pill" data-risk="NORMAL" style="color: var(--risk-normal);">Normal</button>
+              <button class="filter-pill" data-risk="WASPADA" style="color: var(--risk-waspada);">Waspada</button>
+              <button class="filter-pill" data-risk="WARNING" style="color: var(--risk-warning);">Warning</button>
+              <button class="filter-pill" data-risk="CRITICAL" style="color: var(--risk-critical);">Kritis</button>
+            </div>
+          </div>
+
+          <div>
+            <div class="filter-group-title">Filter Penyulang</div>
+            <select class="search-input" id="gisFeederFilter" style="padding-left: 14px;">
+              <option value="ALL">Semua Penyulang (5 Jalur)</option>
+              <option value="Penyulang Kota">Penyulang Kota</option>
+              <option value="Penyulang Teriak">Penyulang Teriak</option>
+              <option value="Penyulang Samalantan">Penyulang Samalantan</option>
+              <option value="Penyulang Sanggau Ledo">Penyulang Sanggau Ledo</option>
+              <option value="Penyulang Jagoi Babang">Penyulang Jagoi Babang</option>
+            </select>
+          </div>
+
+          <div class="filter-group-title" style="margin-top: 8px;">
+            Daftar Aset Terseleksi
+          </div>
+
+          <!-- Dynamic List of Transformers -->
+          <div class="gis-asset-list" id="gisAssetListContainer">
+            <!-- Populated via JS -->
+          </div>
+        </aside>
+
+        <!-- Main Map Viewport -->
+        <div class="gis-map-viewport">
+          <div id="gisMainMap"></div>
+
+          <!-- Floating Map Legend -->
+          <div class="gis-map-legend">
+            <div class="legend-badge">
+              <span class="legend-circle legend-green"></span> Normal (≥80)
+            </div>
+            <div class="legend-badge">
+              <span class="legend-circle legend-yellow"></span> Waspada (65-79)
+            </div>
+            <div class="legend-badge">
+              <span class="legend-circle legend-orange"></span> Warning (50-64)
+            </div>
+            <div class="legend-badge">
+              <span class="legend-circle legend-red"></span> Kritis (&lt;50)
+            </div>
+          </div>
+
+          <!-- Slide-in Detail Drawer (Requirements from PROMPT 2) -->
+          <div class="gis-detail-drawer" id="gisDetailDrawer">
+            <!-- Dynamically populated via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VIEW 4: AI TRANSFORMER ANALYSIS (ANFIS Model from PRD PROMPT 5)
+       ========================================================================= -->
+  <section class="view-section" id="view-ai">
+    <div class="container app-layout">
+      <!-- Sub-nav bar -->
+      <div class="app-subnav-bar">
+        <div class="subnav-breadcrumbs">
+          <span>⚡ BDIS</span>
+          <span>/</span>
+          <span class="current">AI Transformer Analysis (ANFIS)</span>
+        </div>
+        <div class="subnav-meta">
+          <span>Model: <strong>Adaptive Neuro-Fuzzy Inference</strong></span>
+          <span class="badge badge-glow">R² = 0.964</span>
+        </div>
+      </div>
+
+      <div class="ai-layout">
+        <!-- Left Trafo Selector -->
+        <div class="ai-trafo-selector-panel">
+          <div class="filter-group-title">Pilih Transformator untuk Dianalisis</div>
+          <select class="search-input" id="aiTrafoSelect" style="padding-left: 14px; margin-bottom: 12px;">
+            <!-- Populated via JS -->
+          </select>
+
+          <div style="background: rgba(0, 168, 255, 0.05); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 14px; font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">
+            💡 <strong>Prinsip Kerja ANFIS:</strong><br>
+            Sistem menggabungkan logika fuzzy (aturan pakar PLN) dengan pembelajaran jaringan saraf tiruan untuk memetakan parameter multi-dimensi (suhu, beban, oil test, trip) menjadi skor kondisi tunggal yang objektif.
+          </div>
+
+          <div style="font-size: 0.76rem; color: var(--text-dim); margin-top: 10px;">
+            Aturan Fuzzy Teraktifkan:
+            <ul style="padding-left: 18px; margin-top: 6px; line-height: 1.4;">
+              <li>IF Loading HIGH & Temp HIGH THEN Risk CRITICAL</li>
+              <li>IF Age OLD & OilScore LOW THEN Degradation HIGH</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right Main AI Assessment Container -->
+        <div class="ai-main-card" id="aiAssessmentContainer">
+          <!-- Dynamically populated via JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VIEW 5: RELIABILITY ANALYTICS (SAIDI, SAIFI, MTTR)
+       ========================================================================= -->
+  <section class="view-section" id="view-reliability">
+    <div class="container app-layout">
+      <!-- Sub-nav bar -->
+      <div class="app-subnav-bar">
+        <div class="subnav-breadcrumbs">
+          <span>⚡ BDIS</span>
+          <span>/</span>
+          <span class="current">Reliability Analytics</span>
+        </div>
+        <div class="subnav-meta">
+          <span>Standar: <strong>SPLN & Peraturan Dirjen Ketenagalistrikan</strong></span>
+        </div>
+      </div>
+
+      <!-- Reliability Key Metrics from PRD (SAIDI 4.21h, SAIFI 3.12, MTTR 1.82h) -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span class="kpi-title">SAIDI (Durasi Padam)</span>
+            <span class="kpi-icon">⏳</span>
+          </div>
+          <div class="kpi-number mono">4.21 <span style="font-size: 1rem;">jam/plg</span></div>
+          <div class="kpi-trend trend-good">
+            <span>Target: &lt; 5.5 jam</span> (Memenuhi SLA)
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span class="kpi-title">SAIFI (Frekuensi Padam)</span>
+            <span class="kpi-icon">⚡</span>
+          </div>
+          <div class="kpi-number mono">3.12 <span style="font-size: 1rem;">kali/plg</span></div>
+          <div class="kpi-trend trend-good">
+            <span>Target: &lt; 4.0 kali</span> (Memenuhi SLA)
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span class="kpi-title">MTTR (Mean Time to Repair)</span>
+            <span class="kpi-icon">🛠️</span>
+          </div>
+          <div class="kpi-number mono">1.82 <span style="font-size: 1rem;">jam</span></div>
+          <div class="kpi-trend trend-good">
+            <span>Kecepatan penanganan tim teknis</span>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span class="kpi-title">CAIDI (Rata-rata Durasi)</span>
+            <span class="kpi-icon">⏱️</span>
+          </div>
+          <div class="kpi-number mono">1.35 <span style="font-size: 1rem;">jam</span></div>
+          <div class="kpi-trend trend-good">
+            <span>Indeks restorasi pelanggan</span>
+          </div>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-card-header">
+            <span class="kpi-title">ENS (Energi Tak Tersalurkan)</span>
+            <span class="kpi-icon">💡</span>
+          </div>
+          <div class="kpi-number mono">14.8 <span style="font-size: 1rem;">MWh</span></div>
+          <div class="kpi-trend trend-warning">
+            <span>Estimasi kerugian kWh padam</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="overview-grid">
+        <div class="panel-card">
+          <div class="panel-head">
+            <div class="panel-title">
+              📈 Tren Gangguan Bulanan & Indeks SAIDI (Jan - Jun)
+            </div>
+            <span class="badge badge-glow">Semester 1</span>
+          </div>
+          <div style="height: 280px; width: 100%;">
+            <canvas id="reliabilityCanvasTrend" style="width: 100%; height: 100%;"></canvas>
+          </div>
+        </div>
+
+        <div class="panel-card">
+          <div class="panel-head">
+            <div class="panel-title">
+              🎯 Distribusi Penyebab Gangguan
+            </div>
+            <span class="badge badge-pln">Pohon 42%</span>
+          </div>
+          <div style="height: 280px; width: 100%;">
+            <canvas id="reliabilityCanvasDonut" style="width: 100%; height: 100%;"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VIEW 6: MAINTENANCE PRIORITY RANKING (P1, P2, P3, P4)
+       ========================================================================= -->
+  <section class="view-section" id="view-maintenance">
+    <div class="container app-layout">
+      <!-- Sub-nav bar -->
+      <div class="app-subnav-bar">
+        <div class="subnav-breadcrumbs">
+          <span>⚡ BDIS</span>
+          <span>/</span>
+          <span class="current">Maintenance Priority Ranking</span>
+        </div>
+        <div class="subnav-meta">
+          <span class="badge badge-p1">P1: Kritis (&lt;48 jam)</span>
+          <span class="badge badge-p2">P2: Tinggi (&lt;14 hari)</span>
+          <span class="badge badge-p3">P3: Sedang (Triwulan)</span>
+          <span class="badge badge-p4">P4: Rutin (Tahunan)</span>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <div class="panel-title">
+            📋 Daftar Prioritas Pemeliharaan Trafo Berdasarkan Skor Kondisi AI
+          </div>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">
+          Tabel diurutkan secara otomatis dari aset yang memiliki risiko kegagalan tertinggi. Klik tombol <strong>Peta GIS</strong> untuk menavigasi kamera langsung ke lokasi tiang gardu.
+        </div>
+
+        <div class="priority-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Peringkat</th>
+                <th>Aset Trafo</th>
+                <th>Penyulang</th>
+                <th>Beban (%)</th>
+                <th>Suhu (°C)</th>
+                <th>Skor Kondisi</th>
+                <th>Tingkat Risiko</th>
+                <th>Prioritas</th>
+                <th>Aksi Lokasi</th>
+              </tr>
+            </thead>
+            <tbody id="priorityTableBody">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       VIEW 7: DATA MANAGEMENT (PROMPT 4 in gardu.prd)
+       ========================================================================= -->
+  <section class="view-section" id="view-data">
+    <div class="container app-layout">
+      <!-- Sub-nav bar -->
+      <div class="app-subnav-bar">
+        <div class="subnav-breadcrumbs">
+          <span>⚡ BDIS</span>
+          <span>/</span>
+          <span class="current">Data Management & Ingestion Pipeline</span>
+        </div>
+        <div class="subnav-meta">
+          <button class="btn btn-primary btn-sm" id="btnOpenImportModal">
+            📥 Simulasi Import Excel / CSV
+          </button>
+        </div>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-head">
+          <div class="panel-title">
+            📁 Dataset Operasional Transformator Distribusi (Skema gardu.prd PROMPT 4)
+          </div>
+          <span class="badge badge-demo">DEMO DATASET</span>
+        </div>
+        <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 14px;">
+          Skema data mencakup: ID_Trafo, Nama_Trafo, Gardu, Penyulang, Kapasitas_kVA, Loading_pct, Temperature_C, Power_Factor, Gangguan_12Bln, Trip_12Bln, Oil_Test_Score, Condition_Index, Risk_Level.
+        </div>
+
+        <div class="priority-table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>ID Trafo</th>
+                <th>Nama Trafo</th>
+                <th>Penyulang</th>
+                <th>Kapasitas</th>
+                <th>Loading (%)</th>
+                <th>Suhu (°C)</th>
+                <th>Power Factor</th>
+                <th>Gangguan/Trip</th>
+                <th>Skor Minyak</th>
+                <th>Condition Index</th>
+                <th>Status Risiko</th>
+              </tr>
+            </thead>
+            <tbody id="dataTableBody">
+              <!-- Dynamically populated via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CSV/Excel Import Modal Simulator -->
+  <div class="modal-backdrop" id="importModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3 style="font-size: 1.15rem; color: #fff;">📥 Pipeline Import Excel / CSV ke PostGIS</h3>
+        <button class="drawer-close" id="btnCloseImportModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+          Pipeline validasi otomatis memeriksa 8 parameter utama sebelum data dimasukkan ke PostgreSQL + PostGIS:
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.8rem; margin-bottom: 20px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: var(--risk-normal);">✓</span> File validation (.xlsx / .csv format)
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: var(--risk-normal);">✓</span> Missing value detection & imputation check
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: var(--risk-normal);">✓</span> Data type & engineering unit validation (kVA, kV, °C)
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: var(--risk-normal);">✓</span> Coordinate validation (Batas spasial Bengkayang EPSG:4326)
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="color: var(--risk-normal);">✓</span> Duplicate transformer ID detection
+          </div>
+        </div>
+
+        <div id="importProgressBox" style="display: none; background: rgba(0, 168, 255, 0.1); border: 1px solid var(--border-accent); padding: 14px; border-radius: var(--radius-sm); margin-bottom: 16px; font-size: 0.82rem;">
+          <div style="display: flex; align-items: center; gap: 8px; color: var(--primary);">
+            <span class="pulse-dot"></span> Sedang memvalidasi 186 baris data trafo Bengkayang...
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 10px;">
+          <button class="btn btn-primary" id="btnSimulateImport">
+            Jalankan Validasi & Import Data
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="container footer-content">
+      <div>
+        <strong style="color: #fff;">BDIS</strong> — Bengkayang Distribution Intelligence System &copy; 2026
+      </div>
+      <div>
+        PLN ULP Bengkayang • Unit Layanan Pelanggan Distribusi Kalimantan Barat
+      </div>
+      <div style="color: var(--risk-waspada);">
+        PROTOTYPE SHOWCASE DEMO DATA
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Leaflet JS, Data JS, App JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
